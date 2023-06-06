@@ -302,3 +302,14 @@ Widget textGreen50R(String text) {
     ),
   );
 }
+
+Widget textGrey4D4D4D_16W500(String text) {
+  return Text(
+    text,
+    textAlign: TextAlign.left,
+    style: TextStyle(
+        fontSize: 16.sp,
+        color: AppColors.grey4D4D4D,
+        fontWeight: FontWeight.w500),
+  );
+}

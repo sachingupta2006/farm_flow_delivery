@@ -4,6 +4,7 @@ import 'package:farm_flow_delivery/Utils/sized_box.dart';
 import 'package:farm_flow_delivery/Utils/texts.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/faqs.dart';
 import 'package:farm_flow_delivery/View/dashboard.dart';
+import 'package:farm_flow_delivery/View/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,7 +28,7 @@ class _SideMenuState extends State<SideMenu>
   var screens = [
     const Faq(),
     const Dashboard(),
-    const Faq(),
+    const Profile(),
   ];
 
   List bottomBarData = [

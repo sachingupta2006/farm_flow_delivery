@@ -1,4 +1,7 @@
 import 'package:farm_flow_delivery/View/LoginScreen.dart';
+import 'package:farm_flow_delivery/View/Notification.dart';
+import 'package:farm_flow_delivery/View/NotificationSettings.dart';
+import 'package:farm_flow_delivery/View/Settings.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/orderfaq.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/contactUs.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/faqs.dart';
@@ -47,6 +50,18 @@ class AppRoutes {
         GetPage(
           name: RouteName.faqs,
           page: () => const Faq(),
+        ),
+        GetPage(
+          name: RouteName.notification,
+          page: () => const Notification(),
+        ),
+        GetPage(
+          name: RouteName.notificationSettings,
+          page: () => const NotificationSettings(),
+        ),
+        GetPage(
+          name: RouteName.settings,
+          page: () => const Settings(),
         ),
          GetPage(
           name: RouteName.feedBack,
