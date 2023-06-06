@@ -273,3 +273,32 @@ Widget textGrey4D4D4D_14(String text) {
     ),
   );
 }
+
+Widget textblack14M(String text) {
+  return Text(
+    text,
+    textAlign: TextAlign.left,
+    style: TextStyle(
+        fontSize: 14.sp, color: AppColors.black, fontWeight: FontWeight.w500),
+  );
+}
+
+Widget textGrey12L(String text) {
+  return Text(
+    text,
+    textAlign: TextAlign.left,
+    style: TextStyle(
+        fontSize: 12.sp, color: AppColors.black, fontWeight: FontWeight.w300),
+  );
+}
+
+Widget textGreen50R(String text) {
+  return Text(
+    text,
+    textAlign: TextAlign.center,
+    style: TextStyle(
+      fontSize: 50.sp,
+      color: AppColors.buttoncolour,
+    ),
+  );
+}
