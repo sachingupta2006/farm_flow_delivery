@@ -8,6 +8,9 @@ class RouteName {
 
 // home
   static const String sideMenu = '/sideMenu';
+  static const String notification = '/notification';
+  static const String notificationSettings = '/notificationSettings';
+  static const String settings = '/settings';
 
   // side menu
   static const String contact = '/contact';

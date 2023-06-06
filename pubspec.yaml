@@ -44,6 +44,12 @@ dependencies:
   dotted_line: ^3.1.0
   flutter_share: ^2.0.0
   percent_indicator: ^4.2.3
+  flutter_switch: ^0.3.2
+  image_cropper: ^4.0.1
+  image_picker: ^0.8.7+5
+  path_provider: ^2.0.15
+  another_flushbar: ^1.12.30
+
 
 
 
