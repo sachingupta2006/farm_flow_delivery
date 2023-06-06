@@ -1,5 +1,9 @@
 import 'package:farm_flow_delivery/View/LoginScreen.dart';
+import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/orderfaq.dart';
+import 'package:farm_flow_delivery/View/Side%20Menu/contactUs.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/faqs.dart';
+import 'package:farm_flow_delivery/View/Side%20Menu/Feedback/feedback.dart';
+import 'package:farm_flow_delivery/View/Side%20Menu/Feedback/feedbackform.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/SideMenu.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/contact.dart';
 import 'package:farm_flow_delivery/View/forgot_password.dart';
@@ -44,5 +48,25 @@ class AppRoutes {
           name: RouteName.faqs,
           page: () => const Faq(),
         ),
+         GetPage(
+          name: RouteName.feedBack,
+          page: () => FeedBack(),
+        ),
+         GetPage(
+          name: RouteName.feedBackform,
+          page: () => Feedbackform(),
+        ),
+
+         GetPage(
+          name: RouteName.contactus,
+          page: () => ContactUs(),
+        ),
+
+          GetPage(
+          name: RouteName.faqcontent,
+          page: () => Faqscontent(),
+        ),
+
+
       ];
 }
