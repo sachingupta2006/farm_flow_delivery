@@ -2,6 +2,7 @@ import 'package:farm_flow_delivery/Utils/colors.dart';
 import 'package:farm_flow_delivery/Utils/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class SideBar extends StatefulWidget {
@@ -17,10 +18,12 @@ class SideBar extends StatefulWidget {
 class _SideBarState extends State<SideBar> {
   List sideBarData = [
     {
-      "icon": Image.asset(
-        "assets/images/faq.png",
+      "icon": SvgPicture.asset(
+        // "assets/images/faq.png",
+        "assets/images/sidebarcontact.svg",
         height: 30.h,
         width: 30.h,
+        color: AppColors.white,
       ),
       "text": "Contact",
       "route": "/contact"
