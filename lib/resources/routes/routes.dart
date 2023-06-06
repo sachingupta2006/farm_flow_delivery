@@ -1,7 +1,7 @@
 import 'package:farm_flow_delivery/View/LoginScreen.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/faqs.dart';
 import 'package:farm_flow_delivery/View/Side%20Menu/SideMenu.dart';
-import 'package:farm_flow_delivery/View/Side%20Menu/contact.dart';
+import 'package:farm_flow_delivery/View/Side%20Menu/Contact/contact.dart';
 import 'package:farm_flow_delivery/View/forgot_password.dart';
 import 'package:farm_flow_delivery/View/reset_password.dart';
 import 'package:farm_flow_delivery/View/splash_screen.dart';
