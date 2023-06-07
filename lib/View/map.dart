@@ -1,3 +1,4 @@
+import 'package:farm_flow_delivery/Utils/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -7,6 +8,8 @@ import 'package:get/get.dart';
 
 import '../Utils/colors.dart';
 import '../Utils/sized_box.dart';
+import 'Order/ongoingorderdata.dart';
+import 'Order/ordersmain.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
@@ -23,11 +26,16 @@ class _MapPageState extends State<MapPage> {
         child: Stack(
           
           children: [
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset("assets/images/map.png",
-                fit: BoxFit.fill,
+            InkWell(
+              onTap: (){
+                mapBottomSheet();
+              },
+              child: Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Image.asset("assets/images/map.png",
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
       
@@ -132,7 +140,7 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
-  builduploadprofile() {
+  mapBottomSheet() {
     return showModalBottomSheet(
       isScrollControlled: true,
       context: context,
@@ -145,18 +153,52 @@ class _MapPageState extends State<MapPage> {
       builder: (context) {
         return Container(
           // height: 180.h,
-          margin: EdgeInsets.symmetric(horizontal: 36.w, vertical: 26.h),
+          margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
           child: Padding(
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                
-              ],
+            child: ListView.builder(
+              shrinkWrap: true,
+              physics: BouncingScrollPhysics(),
+              itemCount: ongoingOrderMainData.length,
+              itemBuilder: (_, index) {
+                return Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 15.h,
+                      backgroundColor: AppColors.buttoncolour,
+                      child: CircleAvatar(
+                        radius: 14.h,
+                        backgroundColor: AppColors.white,
+                        child: textblack14M((index + 1).toString()),
+                      ),
+                    ),
+                    sizedBoxWidth(10.w),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          // Get.toNamed(ongoingOrderMainData[index]["route"]);
+                        },
+                        child: OngoingOrderMainTile(
+                            ongoingOrderMainData[index]["image"],
+                            ongoingOrderMainData[index]["name"],
+                            ongoingOrderMainData[index]["number"],
+                            ongoingOrderMainData[index]["location"]),
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
+            
+            // Column(
+            //   mainAxisSize: MainAxisSize.min,
+            //   mainAxisAlignment: MainAxisAlignment.start,
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     OngoingOrderMainTile()
+            //   ],
+            // ),
           ),
         );
       },

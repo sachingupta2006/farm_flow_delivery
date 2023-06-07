@@ -250,11 +250,13 @@ Widget OngoingOrderMainTile(
   return Padding(
     padding: const EdgeInsets.only(top: 10.0),
     child: Container(
+       //width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(10),
         ),
         color: Color(0xFFFFFFFF),
+        // color: AppColors.greyMed
       ),
       child: Column(
         children: [
@@ -275,7 +277,7 @@ Widget OngoingOrderMainTile(
               ),
               sizedBoxWidth(8.w),
               SizedBox(
-                width: 195.w,
+                // width: 195.w,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
