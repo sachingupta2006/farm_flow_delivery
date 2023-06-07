@@ -1,6 +1,7 @@
 import 'package:farm_flow_delivery/View/LoginScreen.dart';
 import 'package:farm_flow_delivery/View/Notification.dart';
 import 'package:farm_flow_delivery/View/NotificationSettings.dart';
+import 'package:farm_flow_delivery/View/Order/ordercompleted.dart';
 import 'package:farm_flow_delivery/View/Order/orderdetailsotp.dart';
 import 'package:farm_flow_delivery/View/Order/ordersmain.dart';
 import 'package:farm_flow_delivery/View/Settings.dart';
@@ -85,9 +86,21 @@ class AppRoutes {
           name: RouteName.orderdetailsotp,
           page: () => Orderdetailsotp(),
         ),
+
         GetPage(
           name: RouteName.ordermain,
           page: () => OrderMain(),
         ),
+
+
+        
+          GetPage(
+          name: RouteName.ordercompleted,
+          page: () => Ordercompleted(),
+        ),
+
+
+
+
       ];
 }
