@@ -18,6 +18,7 @@ import 'package:farm_flow_delivery/View/splash_screen.dart';
 import 'package:farm_flow_delivery/View/verify_number.dart';
 import 'package:get/get.dart';
 
+import '../../View/map.dart';
 import 'route_name.dart';
 
 class AppRoutes {
@@ -97,6 +98,11 @@ class AppRoutes {
           GetPage(
           name: RouteName.ordercompleted,
           page: () => Ordercompleted(),
+        ),
+
+        GetPage(
+          name: RouteName.mapPage,
+          page: () => MapPage(),
         ),
 
 

@@ -27,4 +27,9 @@ class RouteName {
   static const String feedBackform = '/feedbackform';
   static const String contactus = '/contactus';
   static const String faqcontent = '/faqcontent';
+
+  static const String mapPage = '/mapPage';
+
+
+
 }

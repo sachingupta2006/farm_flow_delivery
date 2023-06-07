@@ -100,6 +100,7 @@ class _Dashboard extends State<Dashboard> {
                       ],
                     ),
                   )
+                
                 ],
               ),
             ),
@@ -281,35 +282,40 @@ class _Dashboard extends State<Dashboard> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 5.w, vertical: 10.h),
-                        child: Container(
-                          padding: EdgeInsets.fromLTRB(24.w, 15.h, 24.w, 0),
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(19.h)),
-                              color: AppColors.white,
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color(0x48B9B9BE),
-                                  blurRadius: 10,
-                                  spreadRadius: 2,
-                                )
-                              ]),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  textBlack20W7000("Start Delivery"),
-                                  Lottie.asset(
-                                      "assets/lotties/delivery_track.json",
-                                      height: 120.h,
-                                      width: 137.w)
-                                ],
-                              ),
-                              SvgPicture.asset('assets/images/locationRoad.svg')
-                            ],
+
+                        child: InkWell(
+                          onTap: () {
+                            Get.toNamed("/mapPage");
+                          },
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(24.w, 15.h, 24.w, 0),
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(19.h)),
+                                color: AppColors.white,
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color(0x48B9B9BE),
+                                    blurRadius: 10,
+                                    spreadRadius: 2,
+                                  )
+                                ]),
+                            child: Row(
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    textBlack20W7000("Start Delivery"),
+                                    Lottie.asset(
+                                        "assets/lotties/delivery_track.json",
+                                        height: 120.h,
+                                        width: 137.w)
+                                  ],
+                                ),
+                              ],
+                            ),
+
                           ),
                         ),
                       ),
