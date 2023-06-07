@@ -315,16 +315,20 @@ class _Dashboard extends State<Dashboard> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          bottomContainer('In Progress Delivery', '03'),
-                          bottomContainer('Pending Delivery', '19'),
+                          bottomContainer('In Progress Delivery', '03',
+                              'inProgressDelivery'),
+                          bottomContainer(
+                              'Pending Delivery', '19', 'pendingDelivery'),
                         ],
                       ),
                       sizedBoxHeight(20.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          bottomContainer('Reschedule Delivery', '05'),
-                          bottomContainer('Complete Delivery', '153'),
+                          bottomContainer('Reschedule Delivery', '05',
+                              'rescheduleDelivery'),
+                          bottomContainer(
+                              'Complete Delivery', '153', 'rescheduleDelivery'),
                         ],
                       ),
                       sizedBoxHeight(20.h),
@@ -374,7 +378,7 @@ class _Dashboard extends State<Dashboard> {
     );
   }
 
-  Widget bottomContainer(String txt, String number) {
+  Widget bottomContainer(String txt, String number, String svg) {
     return Container(
       width: MediaQuery.of(context).size.width / 2 - 26.w,
       height: 128.h,
@@ -405,7 +409,7 @@ class _Dashboard extends State<Dashboard> {
                 ),
                 width: 45.w,
                 child: Center(
-                  child: SvgPicture.asset('assets/images/Settings.svg'),
+                  child: SvgPicture.asset('assets/images/$svg.svg'),
                 ),
               ),
               Flexible(child: textBlack16(txt))
