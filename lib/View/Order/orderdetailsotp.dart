@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -630,8 +631,10 @@ class _OrderdetailsotpState extends State<Orderdetailsotp> {
                     ),
                   ),
                   sizedBoxHeight(52.h),
-                  customButton(text: "Complete Order", onTap: () {}),
-                  sizedBoxHeight(90.h),
+                  customButton(text: "Complete Order", onTap: () {
+                    Get.toNamed("/ordercompleted");
+                  }),
+                  // sizedBoxHeight(90.h),
                 ],
               ),
             ),
