@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:farm_flow_delivery/Utils/colors.dart';
 import 'package:farm_flow_delivery/Utils/sized_box.dart';
 import 'package:farm_flow_delivery/Utils/texts.dart';
-import 'package:farm_flow_delivery/View/Side%20Menu/Faqs/faqs.dart';
+import 'package:farm_flow_delivery/View/Order/ordersmain.dart';
 import 'package:farm_flow_delivery/View/dashboard.dart';
 import 'package:farm_flow_delivery/View/Profile/profile.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class _SideMenuState extends State<SideMenu>
   late bool logedIn;
 
   var screens = [
-    const Faq(),
+    const OrderMain(),
     const Dashboard(),
     const Profile(),
   ];
