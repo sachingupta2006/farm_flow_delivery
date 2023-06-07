@@ -282,6 +282,7 @@ class _Dashboard extends State<Dashboard> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 5.w, vertical: 10.h),
+
                         child: InkWell(
                           onTap: () {
                             Get.toNamed("/mapPage");
@@ -314,6 +315,7 @@ class _Dashboard extends State<Dashboard> {
                                 ),
                               ],
                             ),
+
                           ),
                         ),
                       ),
@@ -334,7 +336,7 @@ class _Dashboard extends State<Dashboard> {
                           bottomContainer('Reschedule Delivery', '05',
                               'rescheduleDelivery'),
                           bottomContainer(
-                              'Complete Delivery', '153', 'rescheduleDelivery'),
+                              'Complete Delivery', '153', 'completeDelivery'),
                         ],
                       ),
                       sizedBoxHeight(20.h),
@@ -387,7 +389,7 @@ class _Dashboard extends State<Dashboard> {
   Widget bottomContainer(String txt, String number, String svg) {
     return Container(
       width: MediaQuery.of(context).size.width / 2 - 26.w,
-      height: 128.h,
+      height: 140.h,
       decoration: BoxDecoration(
         border: Border.all(color: const Color(0xff0E5F02), width: 0.2.h),
         borderRadius: BorderRadius.circular(10.r),
@@ -415,7 +417,10 @@ class _Dashboard extends State<Dashboard> {
                 ),
                 width: 45.w,
                 child: Center(
-                  child: SvgPicture.asset('assets/images/$svg.svg'),
+                  child: SvgPicture.asset(
+                    'assets/images/$svg.svg',
+                    // color: AppColors.white,
+                  ),
                 ),
               ),
               Flexible(child: textBlack16(txt))
