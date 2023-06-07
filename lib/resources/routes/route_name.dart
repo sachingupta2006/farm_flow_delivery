@@ -11,6 +11,8 @@ class RouteName {
   static const String notification = '/notification';
   static const String notificationSettings = '/notificationSettings';
   static const String settings = '/settings';
+  static const String orderdetailsotp = '/orderdetailsotp';
+
 
   // side menu
   static const String contact = '/contact';
