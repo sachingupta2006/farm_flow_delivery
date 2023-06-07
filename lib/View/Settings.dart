@@ -37,14 +37,14 @@ class _SettingsState extends State<Settings> {
                       },
                       child: CircleAvatar(
                           radius: 20.h,
-                          backgroundColor: Color(0XFFF1F1F1),
+                          backgroundColor: const Color(0XFFF1F1F1),
                           child: Center(
                             child: Padding(
                               padding: EdgeInsets.only(left: 8.w),
                               child: Icon(
                                 Icons.arrow_back_ios,
                                 size: 25.h,
-                                color: Color(0xFF141414),
+                                color: const Color(0xFF141414),
                               ),
                             ),
                           )),
@@ -55,28 +55,10 @@ class _SettingsState extends State<Settings> {
                     Text(
                       "Settings",
                       style: TextStyle(
-                          color: Color(0xFF141414),
+                          color: const Color(0xFF141414),
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w600),
                     ),
-                    // Spacer(),
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     Get.toNamed("/notification");
-                    //   },
-                    //   child: SvgPicture.asset(
-                    //     "assets/images/Notificationicon.svg",
-                    //     width: 20.w,
-                    //     height: 24.h,
-                    //   ),
-                    //   style: ElevatedButton.styleFrom(
-                    //     shape: CircleBorder(),
-                    //     // padding: EdgeInsets.all(10),
-                    //     elevation: 2,
-                    //     backgroundColor: AppColors.white,
-                    //     shadowColor: Color(0xFF444444), // <-- Splash color
-                    //   ),
-                    // )
                   ],
                 ),
               ),
@@ -98,21 +80,16 @@ class _SettingsState extends State<Settings> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 39.h,
-              ),
+              SizedBox(height: 15.h),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(7.h),
                   color: AppColors.greyF1F1F1,
                 ),
-
                 margin: EdgeInsets.symmetric(horizontal: 16.w),
-                // color: AppColors.greyF1F1F1,
                 child: CustomListTile(
                   title: "Order Details And Alerts",
                   statecontroller: state,
-                  //sizefactor: MediaQuery.of(context).size.width * 0.4,
                 ),
               ),
               sizedBoxHeight(25.h),
@@ -123,10 +100,10 @@ class _SettingsState extends State<Settings> {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(
-                    "Delete Account",
+                    "Request Deletion Of Account",
                     style: TextStyle(
                         fontSize: 20.sp,
-                        color: Color(0XFF0E5F02),
+                        color: const Color(0XFF0E5F02),
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.w600),
                   ),
@@ -143,7 +120,7 @@ class _SettingsState extends State<Settings> {
                     "Logout",
                     style: TextStyle(
                         fontSize: 20.sp,
-                        color: Color(0XFF0E5F02),
+                        color: const Color(0XFF0E5F02),
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.w600),
                   ),
@@ -164,23 +141,23 @@ class _SettingsState extends State<Settings> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AlertDialog(
-            insetPadding: EdgeInsets.symmetric(horizontal: 16),
-            backgroundColor: Get.isDarkMode ? Colors.black : Color(0XFFFFFFFF),
-            //contentPadding: EdgeInsets.fromLTRB(96, 32, 96, 28),
+            insetPadding: const EdgeInsets.symmetric(horizontal: 16),
+            backgroundColor:
+                Get.isDarkMode ? Colors.black : const Color(0XFFFFFFFF),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               side: BorderSide(
-                  color: Get.isDarkMode ? Colors.grey : Color(0XFFFFFFFF)),
+                  color:
+                      Get.isDarkMode ? Colors.grey : const Color(0XFFFFFFFF)),
             ),
             content: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //sizedBoxHeight(32.h),
                 Align(
                   alignment: Alignment.center,
-                  child: Image.asset(
-                    "mailto:assets/images/bin@2x.png",
+                  child: SvgPicture.asset(
+                    "assets/images/emailEnvo.svg",
                     width: 35.w,
                     height: 34.h,
                   ),
@@ -191,23 +168,21 @@ class _SettingsState extends State<Settings> {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Are you sure you want to Request Deletion Of Your Account?",
+                    "Are you sure you want to request co-op to delete your account?",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.sp,
-                      //fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
-
                 sizedBoxHeight(21.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        Get.back();
                         buildprofiledelete2dialog(context);
                       },
                       child: Container(
@@ -228,13 +203,13 @@ class _SettingsState extends State<Settings> {
                     sizedBoxWidth(28.w),
                     InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        Get.back();
                       },
                       child: Container(
                         height: 48.h,
                         width: 140.w,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Color(0XFF0E5F02)),
+                            border: Border.all(color: const Color(0XFF0E5F02)),
                             borderRadius: BorderRadius.circular(10.h),
                             color: AppColors.white),
                         child: Center(
@@ -260,49 +235,45 @@ class _SettingsState extends State<Settings> {
     return showDialog(
         context: context,
         builder: (context) {
-          Future.delayed(Duration(seconds: 3), () {
+          Future.delayed(const Duration(seconds: 3), () {
             Navigator.of(context).pop(true);
           });
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AlertDialog(
-                insetPadding: EdgeInsets.symmetric(horizontal: 16),
+                insetPadding: const EdgeInsets.symmetric(horizontal: 16),
                 backgroundColor:
-                    Get.isDarkMode ? Colors.black : Color(0XFFFFFFFF),
+                    Get.isDarkMode ? Colors.black : const Color(0XFFFFFFFF),
                 contentPadding: EdgeInsets.fromLTRB(57.w, 46.h, 57.w, 21.h),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
                   side: BorderSide(
-                      color: Get.isDarkMode ? Colors.grey : Color(0XFFFFFFFF)),
+                      color: Get.isDarkMode
+                          ? Colors.grey
+                          : const Color(0XFFFFFFFF)),
                 ),
                 content: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //sizedBoxHeight(46.h),
                     Align(
                       alignment: Alignment.center,
-                      child: Text(
-                        "Request Send To The Admin",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 22.sp,
-                          //fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      child: SvgPicture.asset("assets/images/emailEnvo.svg"),
                     ),
                     sizedBoxHeight(21.h),
                     Align(
                       alignment: Alignment.center,
-                      child: SvgPicture.asset(
-                        "assets/images/profilrcheck.svg",
-                        width: 67.w,
-                        height: 67.h,
+                      child: Text(
+                        "Request Send To Co-Op",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 22.sp,
+                        ),
                       ),
                     ),
-                    // sizedBoxHeight(44.h)
+                    sizedBoxHeight(40.h),
                   ],
                 ),
               ),
@@ -318,19 +289,19 @@ class _SettingsState extends State<Settings> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AlertDialog(
-            insetPadding: EdgeInsets.symmetric(horizontal: 16),
-            backgroundColor: Get.isDarkMode ? Colors.black : Color(0XFFFFFFFF),
-            //contentPadding: EdgeInsets.fromLTRB(96, 32, 96, 28),
+            insetPadding: const EdgeInsets.symmetric(horizontal: 16),
+            backgroundColor:
+                Get.isDarkMode ? Colors.black : const Color(0XFFFFFFFF),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               side: BorderSide(
-                  color: Get.isDarkMode ? Colors.grey : Color(0XFFFFFFFF)),
+                  color:
+                      Get.isDarkMode ? Colors.grey : const Color(0XFFFFFFFF)),
             ),
             content: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //sizedBoxHeight(32.h),
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
@@ -350,11 +321,9 @@ class _SettingsState extends State<Settings> {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 22.sp,
-                      //fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
-
                 sizedBoxHeight(21.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -387,7 +356,7 @@ class _SettingsState extends State<Settings> {
                         height: 48.h,
                         width: 140.w,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Color(0XFF0E5F02)),
+                            border: Border.all(color: const Color(0XFF0E5F02)),
                             borderRadius: BorderRadius.circular(10.h),
                             color: AppColors.white),
                         child: Center(
@@ -416,14 +385,11 @@ class CustomListTile extends StatefulWidget {
     required this.title,
     required this.statecontroller,
     this.addVideoPage = false,
-
-    //required this.sizefactor
   }) : super(key: key);
 
   final String? title;
   bool statecontroller;
   bool addVideoPage;
-  //double sizefactor;
 
   @override
   State<CustomListTile> createState() => _CustomListTileState();
@@ -432,7 +398,7 @@ class CustomListTile extends StatefulWidget {
 class _CustomListTileState extends State<CustomListTile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 60.h,
       child: Padding(
         padding:
@@ -444,10 +410,9 @@ class _CustomListTileState extends State<CustomListTile> {
               widget.title!,
               style: TextStyle(
                 fontSize: 20.sp,
-                // color: Color(0XFF4D4D4D),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             FlutterSwitch(
               switchBorder: Border.all(
                 strokeAlign: BorderSide.strokeAlignCenter,
@@ -455,12 +420,13 @@ class _CustomListTileState extends State<CustomListTile> {
                 width: 1,
                 color: const Color(0xffCCCCCC),
               ),
+              padding: 0,
               width: 50.0,
               height: 25.0,
-              toggleColor: Color(0xFF0E5F02),
+              toggleColor: const Color(0xFF0E5F02),
               activeColor: AppColors.white,
               inactiveColor: Colors.white,
-              inactiveToggleColor: Color(0xff686868),
+              inactiveToggleColor: const Color(0xff686868),
               value: widget.statecontroller,
               onToggle: (val) {
                 setState(() {

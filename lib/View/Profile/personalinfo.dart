@@ -8,7 +8,6 @@ import 'package:farm_flow_delivery/View/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -23,7 +22,6 @@ class PersonalInfo extends StatefulWidget {
 
 class _PersonalInfoState extends State<PersonalInfo> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  //bool editBool = false;
   DateTime? _selectedDate;
   final ProfileImageController editProfileImage =
       Get.put(ProfileImageController());
@@ -31,12 +29,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
   void _submit() {
     setState(() {
       setState(() {
-        // editBool = false;
         nameValue = nameController.text;
         dateValue = datecontroller.text;
         phoneValue = phoneController.text;
         emailValue = emailController.text;
-        // addressValue = addressController.text;
       });
     });
     // }
@@ -57,7 +53,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
       builder: (context, child) {
         return Theme(
             data: Theme.of(context).copyWith(
-              colorScheme: ColorScheme.light(
+              colorScheme: const ColorScheme.light(
                 primary: AppColors.buttoncolour,
                 onPrimary: AppColors.white,
                 onSurface: Colors.blueAccent,
@@ -71,7 +67,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
             child: child!);
       },
     ).then((pickedDate) {
-      // Check if no date is selected
       if (pickedDate == null) {
         return;
       }
@@ -108,7 +103,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                 Text(
                   'Profile Photo',
                   style: TextStyle(
-                      color: Color(0xff444444),
+                      color: const Color(0xff444444),
                       fontSize: 22.sp,
                       fontFamily: 'Poppins'),
                 ),
@@ -126,7 +121,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         children: [
                           CircleAvatar(
                             radius: 27.r,
-                            backgroundColor: Color(0xff143C6D),
+                            backgroundColor: const Color(0xff143C6D),
                             child: Icon(
                               Icons.camera_alt_outlined,
                               size: 30.sp,
@@ -140,7 +135,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                             'Camera',
                             style: TextStyle(
                                 fontSize: 13.sp,
-                                color: Color(0xff444444),
+                                color: const Color(0xff444444),
                                 fontFamily: 'Poppins'),
                           )
                         ],
@@ -156,7 +151,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         children: [
                           CircleAvatar(
                             radius: 27.r,
-                            backgroundColor: Color(0xff143C6D),
+                            backgroundColor: const Color(0xff143C6D),
                             child: Icon(
                               Icons.image_outlined,
                               size: 30.sp,
@@ -170,7 +165,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                             'Gallery',
                             style: TextStyle(
                                 fontSize: 13.sp,
-                                color: Color(0xff444444),
+                                color: const Color(0xff444444),
                                 fontFamily: 'Poppins'),
                           )
                         ],
@@ -204,14 +199,14 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     },
                     child: CircleAvatar(
                       radius: 20.h,
-                      backgroundColor: Color(0XFFF1F1F1),
+                      backgroundColor: const Color(0XFFF1F1F1),
                       child: Center(
                         child: Padding(
                           padding: EdgeInsets.only(left: 8.w),
                           child: Icon(
                             Icons.arrow_back_ios,
                             size: 25.h,
-                            color: Color(0XFF141414),
+                            color: const Color(0XFF141414),
                           ),
                         ),
                       ),
@@ -221,7 +216,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   Text(
                     "Personal Information",
                     style: TextStyle(
-                      color: Color(0XFF141414),
+                      color: const Color(0XFF141414),
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w600,
                     ),
@@ -241,57 +236,30 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Center(
-                          child: Stack(
-                              clipBehavior: Clip.none,
-                              alignment: Alignment.center,
-                              children: [
-                                Obx(
-                                  () => ClipOval(
-                                    child: SizedBox.fromSize(
-                                      size: Size.fromRadius(60.r),
-                                      child: editProfileImage
-                                                  .profilePicPath.value !=
-                                              ''
-                                          ? Image(
-                                              image: FileImage(File(
-                                                  editProfileImage
-                                                      .profilePicPath.value)),
-                                              fit: BoxFit.cover,
-                                              width: 200.w,
-                                              height: 200.h,
-                                            )
-                                          : Image.asset(
-                                              'assets/images/profile.png'),
-                                    ),
-                                  ),
+                          child: Obx(
+                            () => GestureDetector(
+                              onTap: () {
+                                builduploadprofile();
+                              },
+                              child: ClipOval(
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(60.r),
+                                  child: editProfileImage
+                                              .profilePicPath.value !=
+                                          ''
+                                      ? Image(
+                                          image: FileImage(File(editProfileImage
+                                              .profilePicPath.value)),
+                                          fit: BoxFit.cover,
+                                          width: 200.w,
+                                          height: 200.h,
+                                        )
+                                      : Image.asset(
+                                          'assets/images/profile.png'),
                                 ),
-                                Positioned(
-                                  top: 0,
-                                  right: 0,
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      builduploadprofile();
-                                    },
-                                    child: Material(
-                                      elevation: 1,
-                                      shape: CircleBorder(),
-                                      child: CircleAvatar(
-                                          radius: 16.5.r,
-                                          backgroundColor: Color(0XFF0E5F02),
-                                          child: SvgPicture.asset(
-                                            "assets/images/camera-svgrepo-com.svg",
-                                            width: 20.w,
-                                            height: 17.h,
-                                          )
-                                          // Icon(
-                                          //   Icons.edit_outlined,
-                                          //   color: Color(0xffCCCCCC),
-                                          // ),
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ]),
+                              ),
+                            ),
+                          ),
                         ),
                         sizedBoxHeight(31.h),
                         Text(
@@ -299,8 +267,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 18.sp,
-                              color: Color(0XFF141414)),
+                              color: const Color(0XFF141414)),
                         ),
+                        sizedBoxHeight(5.h),
                         CustomTextFormField(
                           textEditingController: nameController,
                           hintText: 'Enter Full Name',
@@ -324,8 +293,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 18.sp,
-                              color: Color(0XFF141414)),
+                              color: const Color(0XFF141414)),
                         ),
+                        sizedBoxHeight(5.h),
                         Personaldatepicker(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -342,8 +312,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 18.sp,
-                              color: Color(0XFF141414)),
+                              color: const Color(0XFF141414)),
                         ),
+                        sizedBoxHeight(5.h),
                         CustomTextFormField(
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(10),
@@ -366,8 +337,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 18.sp,
-                              color: Color(0XFF141414)),
+                              color: const Color(0XFF141414)),
                         ),
+                        sizedBoxHeight(5.h),
                         CustomTextFormField(
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(50),
@@ -392,7 +364,8 @@ class _PersonalInfoState extends State<PersonalInfo> {
                               final isValid = _formKey.currentState?.validate();
                               if (isValid!) {
                                 _submit();
-                                Get.toNamed("/profile");
+                                // Get.toNamed("/profile");
+                                Get.back();
                               } else {
                                 Flushbar(
                                   message: "Please fill all fields",
@@ -437,10 +410,8 @@ class ProfileImageController extends GetxController {
             AndroidUiSettings(
               toolbarTitle: "Crop Image",
               toolbarColor: Get.theme.appBarTheme.backgroundColor,
-              // toolbarWidgetColor: ColorConstants.kWhite,
               backgroundColor: Colors.black,
               activeControlsWidgetColor: Colors.red,
-              // initAspectRatio: CropAspectRatioPreset.original,
               cropFrameColor: Colors.white,
               lockAspectRatio: false,
             ),
@@ -449,9 +420,7 @@ class ProfileImageController extends GetxController {
             ),
           ]);
       if (croppedImg != null) {
-        // profilPic = croppedImg.path;
         profilePicPath.value = croppedImg.path;
-        // Get.back();
       }
     }
   }
@@ -507,27 +476,27 @@ class Personaldatepicker extends StatelessWidget {
       controller: datecontroller,
       onTap: (() => ontap()),
       readOnly: true,
-      cursorColor: Color(0xFF3B3F43),
+      cursorColor: const Color(0xFF3B3F43),
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
           errorStyle: TextStyle(fontSize: 14.sp),
           contentPadding: EdgeInsets.all(17.h),
           filled: true,
-          fillColor: Color(0xFFF1F1F1),
+          fillColor: const Color(0xFFF1F1F1),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
-            borderSide:
-                BorderSide(color: Color(0xFF707070).withOpacity(0), width: 1),
+            borderSide: BorderSide(
+                color: const Color(0xFF707070).withOpacity(0), width: 1),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
-            borderSide:
-                BorderSide(color: Color(0xFF707070).withOpacity(0), width: 1),
+            borderSide: BorderSide(
+                color: const Color(0xFF707070).withOpacity(0), width: 1),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
-            borderSide:
-                BorderSide(color: Color(0xFF707070).withOpacity(0), width: 1),
+            borderSide: BorderSide(
+                color: const Color(0xFF707070).withOpacity(0), width: 1),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
@@ -563,7 +532,7 @@ class Personaldatepicker extends StatelessWidget {
               fontWeight: FontWeight.w400,
               color: Get.isDarkMode
                   ? Colors.white
-                  : Color(0xFF4D4D4D).withOpacity(0.3)),
+                  : const Color(0xFF4D4D4D).withOpacity(0.3)),
           hintText: "Select Date"),
     );
   }
