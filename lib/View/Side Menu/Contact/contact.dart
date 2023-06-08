@@ -448,15 +448,20 @@ class _ContactState extends State<Contact> {
                                   ),
                                   Row(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(top: 3.h),
-                                        child: SvgPicture.asset(
-                                          "assets/images/mail.svg",
+                                        child: Image.asset(
+                                          "assets/images/mail.png",
                                           width: 13.w,
-                                          height: 13.w,
+                                          height: 13.h,
                                         ),
+                                        //     SvgPicture.asset(
+                                        //   "assets/images/mail.svg",
+                                        //   width: 13.w,
+                                        //   height: 13.w,
+                                        // ),
                                       ),
                                       sizedBoxWidth(5.w),
                                       RichText(
@@ -616,15 +621,20 @@ class _ContactState extends State<Contact> {
                                   ),
                                   Row(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(top: 3.h),
-                                        child: SvgPicture.asset(
+                                        child: Image.asset(
                                           "assets/images/mail.png",
                                           width: 13.w,
-                                          height: 13.w,
+                                          height: 13.h,
                                         ),
+                                        // SvgPicture.asset(
+                                        //   "assets/images/mail.svg",
+                                        //   width: 13.w,
+                                        //   height: 13.w,
+                                        // ),
                                       ),
                                       sizedBoxWidth(5.w),
                                       RichText(
@@ -796,15 +806,20 @@ class _ContactState extends State<Contact> {
                                   ),
                                   Row(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(top: 3.h),
-                                        child: SvgPicture.asset(
-                                          "assets/images/mail.svg",
+                                        child: Image.asset(
+                                          "assets/images/mail.png",
                                           width: 13.w,
-                                          height: 13.w,
+                                          height: 13.h,
                                         ),
+                                        // SvgPicture.asset(
+                                        //   "assets/images/mail.svg",
+                                        //   width: 13.w,
+                                        //   height: 13.w,
+                                        // ),
                                       ),
                                       sizedBoxWidth(5.w),
                                       RichText(
@@ -978,15 +993,20 @@ class _ContactState extends State<Contact> {
                                   ),
                                   Row(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(top: 3.h),
-                                        child: SvgPicture.asset(
-                                          "assets/images/mail.svg",
-                                          width: 20.w,
-                                          height: 20.w,
+                                        child: Image.asset(
+                                          "assets/images/mail.png",
+                                          width: 13.w,
+                                          height: 13.h,
                                         ),
+                                        // SvgPicture.asset(
+                                        //   "assets/images/mail.svg",
+                                        //   width: 20.w,
+                                        //   height: 20.w,
+                                        // ),
                                       ),
                                       sizedBoxWidth(5.w),
                                       RichText(
