@@ -41,26 +41,26 @@ class _ProfileState extends State<Profile> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: CircleAvatar(
-                      radius: 20.h,
-                      backgroundColor: const Color(0XFFF1F1F1),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 8.w),
-                          child: Icon(
-                            Icons.arrow_back_ios,
-                            size: 25.h,
-                            color: const Color(0XFF141414),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  sizedBoxWidth(15.w),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Get.back();
+                  //   },
+                  //   child: CircleAvatar(
+                  //     radius: 20.h,
+                  //     backgroundColor: const Color(0XFFF1F1F1),
+                  //     child: Center(
+                  //       child: Padding(
+                  //         padding: EdgeInsets.only(left: 8.w),
+                  //         child: Icon(
+                  //           Icons.arrow_back_ios,
+                  //           size: 25.h,
+                  //           color: const Color(0XFF141414),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // sizedBoxWidth(15.w),
                   Text(
                     "My Profile",
                     style: TextStyle(
