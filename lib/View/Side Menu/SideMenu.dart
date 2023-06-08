@@ -117,30 +117,33 @@ class _SideMenuState extends State<SideMenu>
                             });
                           },
                           icon: isSideMenuClosed
-                              ? Container(
-                                  height: 42.h,
-                                  width: 42.h,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25.h),
-                                    color: AppColors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.shade400,
-                                        blurRadius: 5.h,
-                                        spreadRadius: 2.h,
-                                      )
-                                    ],
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SvgPicture.asset(
-                                        "assets/images/menu.svg",
-                                        height: 18.h,
-                                        width: 18.h,
-                                        color: AppColors.black,
-                                      ),
-                                    ],
+                              ? Padding(
+                                  padding: EdgeInsets.only(bottom: 13.h),
+                                  child: Container(
+                                    height: 42.h,
+                                    width: 42.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(25.h),
+                                      color: AppColors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.shade400,
+                                          blurRadius: 5.h,
+                                          spreadRadius: 2.h,
+                                        )
+                                      ],
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        SvgPicture.asset(
+                                          "assets/images/menu.svg",
+                                          height: 18.h,
+                                          width: 18.h,
+                                          color: AppColors.black,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 )
                               : Icon(

@@ -177,7 +177,8 @@ class _MapPageState extends State<MapPage> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          // Get.toNamed(ongoingOrderMainData[index]["route"]);
+                          Get.toNamed("/orderdetailsotp");
+                          //  Get.toNamed(ongoingOrderMainData[index]["route"]);
                         },
                         child: OngoingOrderMainTile(
                             ongoingOrderMainData[index]["image"],

@@ -100,7 +100,6 @@ class _Dashboard extends State<Dashboard> {
                       ],
                     ),
                   )
-                
                 ],
               ),
             ),
@@ -282,7 +281,6 @@ class _Dashboard extends State<Dashboard> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 5.w, vertical: 10.h),
-
                         child: InkWell(
                           onTap: () {
                             Get.toNamed("/mapPage");
@@ -301,6 +299,7 @@ class _Dashboard extends State<Dashboard> {
                                   )
                                 ]),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -313,9 +312,10 @@ class _Dashboard extends State<Dashboard> {
                                         width: 137.w)
                                   ],
                                 ),
+                                SvgPicture.asset(
+                                    'assets/images/locationRoad.svg')
                               ],
                             ),
-
                           ),
                         ),
                       ),
