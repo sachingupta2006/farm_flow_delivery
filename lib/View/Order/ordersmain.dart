@@ -9,6 +9,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+enum SingingCharacter {
+  Today,
+  Week,
+  Month,
+  Threemonth,
+  Year,
+}
+
 class OrderMain extends StatefulWidget {
   const OrderMain({super.key});
 
@@ -17,6 +25,7 @@ class OrderMain extends StatefulWidget {
 }
 
 class _OrderMainState extends State<OrderMain> {
+  SingingCharacter? _character = SingingCharacter.Today;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +95,6 @@ class _OrderMainState extends State<OrderMain> {
                             },
                           ),
                         ),
-
                       ),
                       sizedBoxHeight(25),
                       Row(
@@ -96,6 +104,91 @@ class _OrderMainState extends State<OrderMain> {
                             "Ongoing Orders",
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w500, fontSize: 18.sp),
+                          ),
+                          Spacer(),
+                          PopupMenuButton(
+                            offset: const Offset(0, 50),
+                            color: const Color(0xFFFFFFFF),
+                            tooltip: '',
+                            icon: const Icon(
+                              Icons.filter_alt_outlined,
+                              color: Colors.black,
+                            ),
+                            onSelected: (value) {
+                              setState(() {
+                                _character = value;
+                              });
+                              Get.back();
+                            },
+                            itemBuilder: (BuildContext bc) {
+                              return [
+                                PopupMenuItem(
+                                  child: RadioListTile<SingingCharacter>(
+                                    title: const Text('Today'),
+                                    value: SingingCharacter.Today,
+                                    groupValue: _character,
+                                    onChanged: (SingingCharacter? value) {
+                                      setState(() {
+                                        _character = value;
+                                      });
+                                      Get.back();
+                                    },
+                                  ),
+                                ),
+                                PopupMenuItem(
+                                  child: RadioListTile<SingingCharacter>(
+                                    title: const Text('Last Week'),
+                                    value: SingingCharacter.Week,
+                                    groupValue: _character,
+                                    onChanged: (SingingCharacter? value) {
+                                      setState(() {
+                                        _character = value;
+                                      });
+                                      Get.back();
+                                    },
+                                  ),
+                                ),
+                                PopupMenuItem(
+                                  child: RadioListTile<SingingCharacter>(
+                                    title: const Text('Last Month'),
+                                    value: SingingCharacter.Month,
+                                    groupValue: _character,
+                                    onChanged: (SingingCharacter? value) {
+                                      setState(() {
+                                        _character = value;
+                                      });
+                                      Get.back();
+                                    },
+                                  ),
+                                ),
+                                PopupMenuItem(
+                                  child: RadioListTile<SingingCharacter>(
+                                    title: const Text('Last 3 Month'),
+                                    value: SingingCharacter.Threemonth,
+                                    groupValue: _character,
+                                    onChanged: (SingingCharacter? value) {
+                                      setState(() {
+                                        _character = value;
+                                      });
+                                      Get.back();
+                                    },
+                                  ),
+                                ),
+                                PopupMenuItem(
+                                  child: RadioListTile<SingingCharacter>(
+                                    title: const Text('Last Year'),
+                                    value: SingingCharacter.Year,
+                                    groupValue: _character,
+                                    onChanged: (SingingCharacter? value) {
+                                      setState(() {
+                                        _character = value;
+                                      });
+                                      Get.back();
+                                    },
+                                  ),
+                                ),
+                              ];
+                            },
                           ),
                         ],
                       ),
@@ -265,7 +358,7 @@ Widget OngoingOrderMainTile(
   return Padding(
     padding: const EdgeInsets.only(top: 10.0),
     child: Container(
-       //width: double.infinity,
+      //width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(10),
