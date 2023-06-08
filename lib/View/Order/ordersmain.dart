@@ -62,16 +62,11 @@ class _OrderMainState extends State<OrderMain> {
                         physics: BouncingScrollPhysics(),
                         itemCount: salesOrderMainData.length,
                         itemBuilder: (_, index) {
-                          return InkWell(
-                            onTap: () {
-                              Get.toNamed(salesOrderMainData[index]["route"]);
-                            },
-                            child: SalesOrderMainTile(
-                                salesOrderMainData[index]["image"],
-                                salesOrderMainData[index]["name"],
-                                salesOrderMainData[index]["number"],
-                                salesOrderMainData[index]["location"]),
-                          );
+                          return SalesOrderMainTile(
+                              salesOrderMainData[index]["image"],
+                              salesOrderMainData[index]["name"],
+                              salesOrderMainData[index]["number"],
+                              salesOrderMainData[index]["location"]);
                         },
                       ),
                     ),

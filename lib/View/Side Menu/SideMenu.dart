@@ -34,7 +34,6 @@ class _SideMenuState extends State<SideMenu>
   List bottomBarData = [
     {"imageUrl": "assets/images/bottom_icon1_i.svg", "label": "Order"},
     {"imageUrl": "assets/images/bottom_icon2.svg", "label": "Dashboard"},
-    // /
     {"imageUrl": "assets/images/bottom_icon3.svg", "label": "Profile"},
   ];
 
