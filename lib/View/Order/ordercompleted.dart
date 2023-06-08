@@ -31,7 +31,9 @@ class _OrdercompletedState extends State<Ordercompleted> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed("/sideMenu");
+                    },
                     child: CircleAvatar(
                       radius: 20.h,
                       backgroundColor: Color(0XFFF1F1F1),
