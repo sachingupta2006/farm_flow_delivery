@@ -20,104 +20,118 @@ class _OrderMainState extends State<OrderMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.white,
-        title: customAppBar(text: "Orders"),
-
-        // backgroundColor: Color(0xFFF5F8FA),
-        elevation: 0,
-        // shadowColor: Colors.black,
-        automaticallyImplyLeading: false,
-        titleSpacing: 0,
-      ),
-      body: SingleChildScrollView(
+      backgroundColor: AppColors.white,
+      body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(16, 10, 16, 20),
-              child: Column(
+              padding: EdgeInsets.only(top: 20.h, left: 16.w, right: 16.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Sales Rep Order Requests",
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.w500, fontSize: 18.sp),
-                      ),
-                    ],
-                  ),
-                  sizedBoxHeight(10),
-                  Container(
-                    height: 370.h,
-                    width: 360.w,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF1F1F1),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(23, 5, 23, 0),
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: BouncingScrollPhysics(),
-                        itemCount: salesOrderMainData.length,
-                        itemBuilder: (_, index) {
-                          return InkWell(
-                            onTap: () {
-                              Get.toNamed(salesOrderMainData[index]["route"]);
-                            },
-                            child: SalesOrderMainTile(
-                                salesOrderMainData[index]["image"],
-                                salesOrderMainData[index]["name"],
-                                salesOrderMainData[index]["number"],
-                                salesOrderMainData[index]["location"]),
-                          );
-                        },
-                      ),
+                  Text(
+                    "Orders",
+                    style: TextStyle(
+                      color: const Color(0XFF141414),
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  sizedBoxHeight(25),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Ongoing Orders",
-                        style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.w500, fontSize: 18.sp),
-                      ),
-                    ],
-                  ),
-                  sizedBoxHeight(10),
-                  Container(
-                    height: 370.h,
-                    width: 360.w,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF1F1F1),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(23, 5, 23, 0),
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: BouncingScrollPhysics(),
-                        itemCount: ongoingOrderMainData.length,
-                        itemBuilder: (_, index) {
-                          return InkWell(
-                            onTap: () {
-                              Get.toNamed(ongoingOrderMainData[index]["route"]);
-                            },
-                            child: OngoingOrderMainTile(
-                                ongoingOrderMainData[index]["image"],
-                                ongoingOrderMainData[index]["name"],
-                                ongoingOrderMainData[index]["number"],
-                                ongoingOrderMainData[index]["location"]),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                  sizedBoxHeight(40.h)
                 ],
+              ),
+            ),
+            sizedBoxHeight(13.h),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(16, 9, 16, 20),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Sales Rep Order Requests",
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w500, fontSize: 18.sp),
+                          ),
+                        ],
+                      ),
+                      sizedBoxHeight(10),
+                      Container(
+                        height: 370.h,
+                        width: 360.w,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF1F1F1),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(23, 5, 23, 0),
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: BouncingScrollPhysics(),
+                            itemCount: salesOrderMainData.length,
+                            itemBuilder: (_, index) {
+                              return InkWell(
+                                onTap: () {
+                                  Get.toNamed(
+                                      salesOrderMainData[index]["route"]);
+                                },
+                                child: SalesOrderMainTile(
+                                    salesOrderMainData[index]["image"],
+                                    salesOrderMainData[index]["name"],
+                                    salesOrderMainData[index]["number"],
+                                    salesOrderMainData[index]["location"]),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      sizedBoxHeight(25),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Ongoing Orders",
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w500, fontSize: 18.sp),
+                          ),
+                        ],
+                      ),
+                      sizedBoxHeight(10),
+                      Container(
+                        height: 370.h,
+                        width: 360.w,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF1F1F1),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(23, 5, 23, 0),
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: BouncingScrollPhysics(),
+                            itemCount: ongoingOrderMainData.length,
+                            itemBuilder: (_, index) {
+                              return InkWell(
+                                onTap: () {
+                                  Get.toNamed(
+                                      ongoingOrderMainData[index]["route"]);
+                                },
+                                child: OngoingOrderMainTile(
+                                    ongoingOrderMainData[index]["image"],
+                                    ongoingOrderMainData[index]["name"],
+                                    ongoingOrderMainData[index]["number"],
+                                    ongoingOrderMainData[index]["location"]),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      sizedBoxHeight(40.h)
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
