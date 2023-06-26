@@ -256,25 +256,6 @@ class _Dashboard extends State<Dashboard> {
                               ),
                             ),
                             sizedBoxHeight(15.h),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: List.generate(
-                                5,
-                                (index) => Container(
-                                  decoration: BoxDecoration(
-                                      color: index == 2
-                                          ? AppColors.buttoncolour
-                                          : const Color(0xffE1E1E1),
-                                      borderRadius:
-                                          BorderRadius.circular(25.r)),
-                                  height: 7.h,
-                                  width: index == 2 ? 30.h : 7.h,
-                                  margin: const EdgeInsets.symmetric(
-                                    horizontal: 3.0,
-                                  ),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -323,20 +304,20 @@ class _Dashboard extends State<Dashboard> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          bottomContainer('In Progress Delivery', '03',
+                          bottomContainer('In Progress Deliveries', '03',
                               'inProgressDelivery'),
                           bottomContainer(
-                              'Pending Delivery', '19', 'pendingDelivery'),
+                              'Pending Deliveries', '19', 'pendingDelivery'),
                         ],
                       ),
                       sizedBoxHeight(20.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          bottomContainer('Reschedule Delivery', '05',
+                          bottomContainer('Reschedule Deliveries', '05',
                               'rescheduleDelivery'),
                           bottomContainer(
-                              'Complete Delivery', '153', 'completeDelivery'),
+                              'Complete Deliveries', '153', 'completeDelivery'),
                         ],
                       ),
                       sizedBoxHeight(20.h),
@@ -359,9 +340,9 @@ class _Dashboard extends State<Dashboard> {
                               horizontal: 15.w, vertical: 10.h),
                           child: Row(
                             children: [
-                              SvgPicture.asset('assets/images/Settings.svg'),
+                              Image.asset('assets/images/delivery-box.png'),
                               sizedBoxWidth(20.w),
-                              textGrey4D4D4D_16('Cancelled Delivery'),
+                              textGrey4D4D4D_16('Cancelled Deliveries'),
                               const Spacer(),
                               Text(
                                 '02',
