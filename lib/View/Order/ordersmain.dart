@@ -255,17 +255,17 @@ Widget SalesOrderMainTile(
             //mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 16.w),
+                padding: EdgeInsets.only(left: 10.w),
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(60), //<-- SEE HERE
+                    borderRadius: BorderRadius.circular(50), //<-- SEE HERE
                   ),
                   child: Image.asset(image),
                 ),
               ),
               sizedBoxWidth(8.w),
               SizedBox(
-                width: 165.w,
+                width: 160.w,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -277,7 +277,7 @@ Widget SalesOrderMainTile(
                         // "Roma dsouza",
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 16.sp,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -296,7 +296,7 @@ Widget SalesOrderMainTile(
                             // "0225845855",
                             style: TextStyle(
                               color: Color(0XFF585858),
-                              fontSize: 16.sp,
+                              fontSize: 15.sp,
                             ),
                           ),
                         ),
@@ -321,7 +321,7 @@ Widget SalesOrderMainTile(
                             // "Canada",
                             style: TextStyle(
                               color: Color(0XFF585858),
-                              fontSize: 16.sp,
+                              fontSize: 15.sp,
                             ),
                           ),
                         )
@@ -335,7 +335,7 @@ Widget SalesOrderMainTile(
                     color: AppColors.buttoncolour,
                     borderRadius: BorderRadius.circular(10)),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
+                  padding: const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
                   child: Text(
                     "Accept",
                     style: TextStyle(color: Colors.white),
