@@ -106,7 +106,7 @@ class _ProfileState extends State<Profile> {
                       Get.to(() => const PersonalInfo());
                     }),
                     sizedBoxHeight(15.h),
-                    profRow('Password and Security', () {
+                    profRow('Select Login Method', () {
                       Get.to(() => const PasswordSecurity());
                     }),
                   ],
