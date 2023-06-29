@@ -388,11 +388,11 @@ class _ContactState extends State<Contact> {
                               padding: EdgeInsets.only(left: 16.w),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  border: Border.all(
-                                      width: 3,
-                                      color: isConnect == 0
-                                          ? Colors.amber
-                                          : Colors.white),
+                                  // border: Border.all(
+                                  //     width: 3,
+                                  //     color: isConnect == 0
+                                  //         ? Colors.amber
+                                  //         : Colors.white),
                                   borderRadius:
                                       BorderRadius.circular(100), //<-- SEE HERE
                                 ),
@@ -482,34 +482,34 @@ class _ContactState extends State<Contact> {
 
                             // sizedBoxWidth(16.w),
 
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(
-                                    icon: isConnect == 0
-                                        // _isChecked
-                                        ? CircleAvatar(
-                                            radius: 25.h,
-                                            backgroundColor: Color(0XFFF1F1F1),
-                                            child: Icon(
-                                              Icons.star,
-                                              color: Colors.amber,
-                                            ),
-                                          )
-                                        : Icon(
-                                            Icons.star_border,
-                                            color: Color(0XFF707070),
-                                          ),
-                                    onPressed: () {
-                                      setState(() {
-                                        isConnect == 0
-                                            ? isConnect = 1
-                                            : isConnect = 0;
-                                        // _isChecked = !_isChecked;
-                                      });
-                                    },
-                                  ),
-                                ]),
+                            // Row(
+                            //     mainAxisAlignment: MainAxisAlignment.end,
+                            //     children: [
+                            //       IconButton(
+                            //         icon: isConnect == 0
+                            //             // _isChecked
+                            //             ? CircleAvatar(
+                            //                 radius: 25.h,
+                            //                 backgroundColor: Color(0XFFF1F1F1),
+                            //                 child: Icon(
+                            //                   Icons.star,
+                            //                   color: Colors.amber,
+                            //                 ),
+                            //               )
+                            //             : Icon(
+                            //                 Icons.star_border,
+                            //                 color: Color(0XFF707070),
+                            //               ),
+                            //         onPressed: () {
+                            //           setState(() {
+                            //             isConnect == 0
+                            //                 ? isConnect = 1
+                            //                 : isConnect = 0;
+                            //             // _isChecked = !_isChecked;
+                            //           });
+                            //         },
+                            //       ),
+                            //     ]),
 
                             // SvgPicture.asset(
                             //   "assets/images/starconnect.svg",
@@ -561,11 +561,11 @@ class _ContactState extends State<Contact> {
                               padding: EdgeInsets.only(left: 16.w),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  border: Border.all(
-                                      width: 3,
-                                      color: isConnect2 == 0
-                                          ? Colors.amber
-                                          : Colors.white),
+                                  // border: Border.all(
+                                  //     width: 3,
+                                  //     color: isConnect2 == 0
+                                  //         ? Colors.amber
+                                  //         : Colors.white),
                                   borderRadius:
                                       BorderRadius.circular(100), //<-- SEE HERE
                                 ),
@@ -655,34 +655,34 @@ class _ContactState extends State<Contact> {
 
                             // sizedBoxWidth(16.w),
 
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(
-                                    icon: isConnect2 == 0
-                                        // _isChecked
-                                        ? CircleAvatar(
-                                            radius: 25.h,
-                                            backgroundColor: Color(0XFFF1F1F1),
-                                            child: Icon(
-                                              Icons.star,
-                                              color: Colors.amber,
-                                            ),
-                                          )
-                                        : Icon(
-                                            Icons.star_border,
-                                            color: Color(0XFF707070),
-                                          ),
-                                    onPressed: () {
-                                      setState(() {
-                                        isConnect2 == 0
-                                            ? isConnect2 = 1
-                                            : isConnect2 = 0;
-                                        // _isChecked = !_isChecked;
-                                      });
-                                    },
-                                  ),
-                                ]),
+                            // Row(
+                            //     mainAxisAlignment: MainAxisAlignment.end,
+                            //     children: [
+                            //       IconButton(
+                            //         icon: isConnect2 == 0
+                            //             // _isChecked
+                            //             ? CircleAvatar(
+                            //                 radius: 25.h,
+                            //                 backgroundColor: Color(0XFFF1F1F1),
+                            //                 child: Icon(
+                            //                   Icons.star,
+                            //                   color: Colors.amber,
+                            //                 ),
+                            //               )
+                            //             : Icon(
+                            //                 Icons.star_border,
+                            //                 color: Color(0XFF707070),
+                            //               ),
+                            //         onPressed: () {
+                            //           setState(() {
+                            //             isConnect2 == 0
+                            //                 ? isConnect2 = 1
+                            //                 : isConnect2 = 0;
+                            //             // _isChecked = !_isChecked;
+                            //           });
+                            //         },
+                            //       ),
+                            //     ]),
 
                             // SvgPicture.asset(
                             //   "assets/images/starconnect.svg",

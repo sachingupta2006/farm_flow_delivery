@@ -22,7 +22,20 @@ class _OrderdetailsotpState extends State<Orderdetailsotp> {
   bool picked = true;
   bool out = true;
   bool delivered = false;
+  int selectedCurrentFeed = 0;
   TextEditingController pincode = TextEditingController();
+
+  List currentFeedData = [
+    {
+      "imagePath": "assets/images/buffalo.png",
+      "feedFor": "Buffalo",
+      "qty": "100"
+    },
+    {"imagePath": "assets/images/cow.png", "feedFor": "Cow", "qty": "600"},
+    {"imagePath": "assets/images/sheep.png", "feedFor": "Sheep", "qty": "100"},
+    {"imagePath": "assets/images/pig.png", "feedFor": "Pig", "qty": "600"},
+    {"imagePath": "assets/images/hen.png", "feedFor": "Hen", "qty": "100"},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +155,124 @@ class _OrderdetailsotpState extends State<Orderdetailsotp> {
                     //   return null;
                     // },
                   ),
-                  sizedBoxHeight(12.h),
+                  sizedBoxHeight(10.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Current Feed",
+                        style: GoogleFonts.poppins(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff141414),
+                        ),
+                      ),
+                    ],
+                  ),
+                  sizedBoxHeight(14.h),
+                  SizedBox(
+                    width: 358.w,
+                    child: Card(
+                      color: Color(0xffF1F1F1),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: 18.w, bottom: 22.h, right: 18.w, top: 23.h),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: List.generate(
+                                    5,
+                                    (index) => currentFeedSelection(
+                                        imagePath: currentFeedData[index]
+                                            ["imagePath"],
+                                        index: index))),
+                            sizedBoxHeight(22.h),
+                            Row(
+                              children: [
+                                Container(
+                                  width: 109.w,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border:
+                                        Border.all(color: Color(0xff9E9E9E)),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 7.w, vertical: 9.h),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          currentFeedData[selectedCurrentFeed]
+                                                  ["feedFor"] +
+                                              " - ",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 11.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: AppColors.black),
+                                        ),
+                                        Text(
+                                          currentFeedData[selectedCurrentFeed]
+                                                  ["qty"] +
+                                              " Kg",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: AppColors.black),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                sizedBoxWidth(7.h),
+                                Container(
+                                  // width: 210.w,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border:
+                                        Border.all(color: Color(0xff9E9E9E)),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 7.w, vertical: 9.h),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Reordering Date - ",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 12.sp,
+                                              color: AppColors.black,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        Text(
+                                          "29/05-2023",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 12.sp,
+                                              color: AppColors.black,
+                                              fontWeight: FontWeight.w600),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  sizedBoxHeight(10.h),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -631,9 +761,11 @@ class _OrderdetailsotpState extends State<Orderdetailsotp> {
                     ),
                   ),
                   sizedBoxHeight(52.h),
-                  customButton(text: "Complete Order", onTap: () {
-                    Get.toNamed("/ordercompleted");
-                  }),
+                  customButton(
+                      text: "Complete Order",
+                      onTap: () {
+                        Get.toNamed("/ordercompleted");
+                      }),
                   // sizedBoxHeight(90.h),
                 ],
               ),
@@ -659,6 +791,34 @@ class _OrderdetailsotpState extends State<Orderdetailsotp> {
             color: AppColors.white,
             size: 12,
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget currentFeedSelection({required String imagePath, required int index}) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          selectedCurrentFeed = index;
+        });
+      },
+      child: Container(
+        width: 40.w,
+        height: 30.h,
+        decoration: BoxDecoration(
+            // dec
+            color: selectedCurrentFeed == index
+                ? Color.fromARGB(255, 236, 248, 239)
+                : AppColors.white,
+            borderRadius: BorderRadius.circular(5.h),
+            border: Border.all(
+                color: selectedCurrentFeed == index
+                    ? AppColors.buttoncolour
+                    : AppColors.grey4D4D4D)),
+        child: Padding(
+          padding: EdgeInsets.all(4.h),
+          child: Image.asset(imagePath),
         ),
       ),
     );
